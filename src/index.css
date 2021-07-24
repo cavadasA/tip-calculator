@@ -5,10 +5,12 @@ body {
   font-family: 'Space Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height:max-content;
 }
 
 * {
   font-family: 'Space Mono', monospace;
+  
 }
 
 
