@@ -13,8 +13,8 @@ function App() {
       </div>
       <div className="row">
         <div
-          className="col-sm-12 col-lg-8 offset-lg-2 mt-5 bg-white"
-          style={{ borderRadius: 3 + "em " + 3 + "em " + 0 + "em " + 0 + "em" }}
+          className="col-sm-12 col-lg-8 offset-lg-2 mt-5 bg-white mr-0 pr-5 pl-5"
+          style={{ borderRadius: 3 + "em " + 3 + "em " + 3 + "em " + 3 + "em" }}
         >
           <div className="row d-none d-md-flex ">
             <div className="col-6">
@@ -24,7 +24,7 @@ function App() {
               <Results />
             </div>
           </div>
-          <div className="row d-lg-none ">
+          <div className="row d-lg-none d-md-none">
               <Interface />
               <Results />
           </div>

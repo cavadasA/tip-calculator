@@ -34,3 +34,8 @@ export const setPersonAmount = (personAmount) => {
     payload: personAmount,
   };
 };
+export const resetValues = () => {
+  return {
+    type: "@allValues/reset"
+  };
+};

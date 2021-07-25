@@ -2,33 +2,33 @@ import { useStore, useSelector } from "react-redux";
 import { TipButton } from "./button";
 import { FaUser } from "react-icons/fa";
 import {
-    changeBill,
-    changePersons,
-    changeSelectedButton,
-    setPersonAlert,
-    setTipAmount,
-    setPersonAmount,
-  } from "../store/actions";
+  changeBill,
+  changePersons,
+  changeSelectedButton,
+  setPersonAlert,
+  setTipAmount,
+  setPersonAmount,
+} from "../store/actions";
 
 export function Interface() {
-    const store = useStore();
-    const bill = useSelector((state) => state.bill);
-    const persons = useSelector((state) => state.persons);
-    const personAlert = useSelector((state) => state.personAlert);
-    const selectedButton = useSelector((state) => state.selectedButton);
-  
-    function handleTip(percentage) {
-      if (persons === "" || persons === 0) {
-        store.dispatch(setPersonAlert(true));
-      } else {
-        store.dispatch(setPersonAlert(false));
-        store.dispatch(changeSelectedButton(percentage));
-        let tipResult = (bill * percentage) / persons;
-        store.dispatch(setTipAmount(parseFloat(tipResult.toFixed(2))));
-        let personResult = bill / persons + parseFloat(tipResult.toFixed(2));
-        store.dispatch(setPersonAmount(parseFloat(personResult.toFixed(2))));
-      }
+  const store = useStore();
+  const bill = useSelector((state) => state.bill);
+  const persons = useSelector((state) => state.persons);
+  const personAlert = useSelector((state) => state.personAlert);
+  const selectedButton = useSelector((state) => state.selectedButton);
+
+  function handleTip(percentage) {
+    if (persons === "" || persons === 0) {
+      store.dispatch(setPersonAlert(true));
+    } else {
+      store.dispatch(setPersonAlert(false));
+      store.dispatch(changeSelectedButton(percentage));
+      let tipResult = (bill * percentage) / persons;
+      store.dispatch(setTipAmount(parseFloat(tipResult.toFixed(2))));
+      let personResult = bill / persons + parseFloat(tipResult.toFixed(2));
+      store.dispatch(setPersonAmount(parseFloat(personResult.toFixed(2))));
     }
+  }
 
   return (
     <div>
@@ -110,7 +110,7 @@ export function Interface() {
         </div>
         <div className="col-sm-6 w-50 ">
           {personAlert === true ? (
-            <h2 className="header d-none d-md-block text-right text-danger mt-3 pr-5 ">
+            <h2 className="header d-none d-xl-block text-right text-danger mt-3 pr-5 ">
               Can't be zero
             </h2>
           ) : (

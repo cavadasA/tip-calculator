@@ -36,6 +36,16 @@ export const universalReducer = (state = {}, action) => {
         ...state,
         personAmount: newPersonAmount,
       };
+    case "@allValues/reset":
+      return {
+        ...state,
+        bill: "",
+        persons: "",
+        selectedButton: "",
+        tipAmount: 0,
+        personAmount: 0,
+        personAlert: false,
+      };
     default: {
       return {
         ...state,
